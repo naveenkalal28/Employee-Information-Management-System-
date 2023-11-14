@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Registration</title>
+</head>
+<center>
+	<body>
+		<h2>
+			<ins>Registration</ins>
+		</h2>
+		<!-- <marquee>This text will scroll from right to left</marquee> -->
+
+		<form action="register" method="post">
+			<div>
+				<label for="username">Username:</label> <input type="text"
+					id="username" name="username" required>
+			</div>
+			<br>
+			<div>
+				<label for="password">Password:</label> <input type="password"
+					id="password" name="password" required>
+			</div>
+			<br>
+			<div>
+				<label>Gender:</label> <input type="radio" id="male" name="gender"
+					value="male"> <label for="male">Male</label> <input
+					type="radio" id="female" name="gender" value="female"> <label
+					for="female">Female</label>
+			</div>
+			<br>
+			<div>
+				<label for="country">Country:</label> 
+				<select id="country" name="country">
+					<option    value="us">United States</option>
+					<option value="ca">Canada</option>
+					<option value="uk">United Kingdom</option>
+					<option value="au">Australia</option>
+					<option value="in">India</option>
+					<option value="sr">Srilanka</option>option>
+				</select>
+			</div>
+			<br>
+			 <div>
+    <!-- <label>Interests:</label> -->
+    <br>
+           <div>
+           <label for="option">multiple option:</label> 
+           <input type="checkbox" id="selectAll" onclick="selectAllCheckboxes()">
+            <label for="selectAll"><b>Select All</b></label>
+            <br>
+            <input type="checkbox" name="checkboxGroup" value="option-a">
+            <label for="option-a">Option A</label>
+            <br>
+            <input type="checkbox" name="checkboxGroup" value="option-b">
+            <label for="option-b">Option B</label>
+            <br>
+            <input type="checkbox" name="checkboxGroup" value="option-c">
+            <label for="option-c">Option C</label>
+            <br>
+            <input type="checkbox" name="checkboxGroup" value="option-d">
+            <label for="option-d">Option D</label>
+</div>
+<script>
+        function selectAllCheckboxes() {
+            var selectAllCheckbox = document.getElementById("selectAll");
+            var checkboxes = document.querySelectorAll("input[name='checkboxGroup']");
+
+            for (var i = 0; i < checkboxes.length; i++) {
+                checkboxes[i].checked = selectAllCheckbox.checked;
+            }
+        }
+    </script>
+    <div>
+    	<!-- <label>Interests:</label> -->
+    	<label for="option">multiple option:</label> 
+           <input type="checkbox" id="interests" onclick="selectAllCheckboxes()">
+            <label for="interests"><b>Interests</b></label>
+            <br>
+        <!-- <input type="checkbox" id="interest1" name="interests" value="sports">
+        <label for="interest1">Sports</label><br>
+
+        <input type="checkbox" id="interest2" name="interests" value="music">
+        <label for="interest2">Music</label><br>
+
+        <input type="checkbox" id="interest3" name="interests" value="movies">
+        <label for="interest3">Movies</label><br>
+	
+	<input type="checkbox" id="interest4" name="interests" value="travelling">
+        <label for="interest4">  Travelling</label><br>
+ -->
+   
+</div>	
+			<br>
+			<div>
+				<label for="comments">Comments:</label>
+				<textarea id="comments" name="comments" rows="5" cols="30"></textarea>
+			</div>
+			<!-- <br>
+			<div>
+				<label for="file">Upload File:</label> <input type="file" id="file"
+					name="file">
+			</div> -->
+			<br>
+			<div>
+				<button type="submit">Register</button>
+			</div>
+		</form>
+</center>
+</body>
+</html>
